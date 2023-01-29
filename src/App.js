@@ -8,6 +8,7 @@ import MySkills from "./pages/MySkills";
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Footer from './pages/Footer';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -43,21 +44,22 @@ function App() {
         <Landing setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto">
-        <Projects />
+      <div className="w-5/6 xs:w-2/3 sm:w-5/6 mx-auto">
+        <Projects setSelectedPage={setSelectedPage}/>
       </div>
       <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
-        <MySkills />
+        <MySkills setSelectedPage={setSelectedPage}/>
       </div>
       <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
-        <About />
+        <About setSelectedPage={setSelectedPage}/>
       </div>
       <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
-        <Contact />
+        <Contact setSelectedPage={setSelectedPage}/>
       </div>
+      <Footer />
     </div>
   );
 }
