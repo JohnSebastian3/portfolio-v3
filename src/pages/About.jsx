@@ -1,10 +1,25 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import profile from "../assets/profile-image.jpg";
+import { useEffect, useRef } from "react";
+import { useInViewport } from "react-in-viewport";
 
-const About = () => {
+const About = ({setSelectedPage}) => {
+
+  const aboutRef = useRef();
+
+  const { inViewport, enterCount, leaveCount } = useInViewport(
+    aboutRef,
+  );
+
+  useEffect(() => {
+    if(inViewport) {
+      setSelectedPage('about');
+    }
+  }, [inViewport])
+
   return (
-    <section id="about" className="pt-32 pb-32">
+    <section id="about" className="pt-32 pb-32" ref={aboutRef}>
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
