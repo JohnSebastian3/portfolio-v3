@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { useInViewport } from "react-in-viewport";
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import project1 from "../assets/project1.png";
@@ -11,7 +13,19 @@ import project8 from "../assets/project8.png";
 import { FiExternalLink } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
 
-const Projects = () => {
+const Projects = ({setSelectedPage}) => {
+  const projectsRef = useRef();
+
+  const { inViewport, enterCount, leaveCount } = useInViewport(
+    projectsRef,
+  );
+
+  useEffect(() => {
+    if(inViewport) {
+      setSelectedPage('projects');
+    }
+  }, [inViewport])
+
   const container = {
     hidden: {},
     visible: {
@@ -29,34 +43,29 @@ const Projects = () => {
   items-center text-center text-steel`;
 
   return (
-    <section id="projects" className="pt-32 pb-32">
+    <section id="projects" className="pt-32 pb-32" ref={projectsRef}>
       {/* HEADINGS */}
       <motion.div
-        className="md:w-2/5 mx-auto text-center"
+        className="md:w-1/2 text-center md:text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
-          hidden: { opacity: 0, y: -50 },
-          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
         }}
       >
-        <div>
-          <p className="font-playfair font-semibold text-4xl">
-            <span className="text-aqua">PRO</span>JECTS
-          </p>
-          <div className="flex justify-center mt-5">
-            <LineGradient width="w-2/3" />
-          </div>
-        </div>
-
+        <p className="font-playfair font-semibold text-4xl mb-5">
+          <span className="text-aqua">PRO</span>JECTS
+        </p>
+        <LineGradient width="mx-auto w-3/5" />
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-24">
         <motion.div
-          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4"
+          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -123,7 +132,7 @@ const Projects = () => {
               <p className="text-base xs:text-xl font-bold">Cleave</p>
               <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
                 A sleek web app to quickly determine tip amounts for group
-                dinners. 
+                dinners.
               </p>
               <div className="flex gap-6">
                 <a href="" className="hover:text-aqua transition duration-200">
@@ -141,7 +150,7 @@ const Projects = () => {
               <p className="text-base xs:text-xl font-bold">Libberly</p>
               <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
                 A minimalistic library app to keep track of read and unread
-                books in your library. 
+                books in your library.
               </p>
               <div className="flex gap-6">
                 <a href="" className="hover:text-aqua transition duration-200">
@@ -158,7 +167,7 @@ const Projects = () => {
             <div className={`${overlayStyles} rounded-md`}>
               <p className="text-base xs:text-xl font-bold">Luxury Salon</p>
               <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
-                A fully responsive design and layout for a salon business. 
+                A fully responsive design and layout for a salon business.
               </p>
               <div className="flex gap-6">
                 <a href="" className="hover:text-aqua transition duration-200">
