@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
-import Navbar from "./scenes/Navbar";
-import DotGroup from './scenes/DotGroup';
-import Landing from './scenes/Landing';
+import Navbar from "./pages/Navbar";
+import DotGroup from "./pages/DotGroup";
+import Landing from "./pages/Landing";
+import LineGradient from "./components/LineGradient";
+import MySkills from "./pages/MySkills";
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -22,20 +27,36 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-charcoal">
+    <div className="app bg-charcoal font-dosis">
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 sm:w-2/3 mx-auto md:h-full">
         {isAboveMediumScreens && (
           <DotGroup
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />
         )}
-        <Landing setSelectedPage={setSelectedPage}/>
+        <Landing setSelectedPage={setSelectedPage} />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto">
+        <Projects />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 sm:w-2/3 mx-auto">
+        <MySkills />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 sm:w-2/3 mx-auto">
+        <About />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 sm:w-2/3 mx-auto">
+        <Contact />
       </div>
     </div>
   );
