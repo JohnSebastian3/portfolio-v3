@@ -1,5 +1,6 @@
 import LineGradient from "../components/LineGradient";
-import useMediaQuery from "../hooks/useMediaQuery";
+import { useEffect, useRef } from "react";
+import { useInViewport } from "react-in-viewport";
 import { motion } from "framer-motion";
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
@@ -19,37 +20,40 @@ import { AiFillGithub } from "react-icons/ai";
 import { DiNpm } from "react-icons/di";
 import { SiPostman } from "react-icons/si";
 
-const MySkills = () => {
+const MySkills = ({setSelectedPage}) => {
+
+  const skillsRef = useRef();
+
+  const { inViewport, enterCount, leaveCount } = useInViewport(
+    skillsRef,
+  );
+
+  useEffect(() => {
+    if(inViewport) {
+      setSelectedPage('skills');
+    }
+  }, [inViewport])
 
   return (
-    <section id="skills" className="pt-32 pb-32 md:pt-36 md:pb-36">
+    <section id="skills" className="pt-32 pb-32 md:pt-36 md:pb-36" ref={skillsRef}>
       <motion.div
-        className="md:w-2/5 mx-auto text-center"
+        className="md:w-1/2 text-center md:text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
-          hidden: { opacity: 0, y: -50 },
-          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
         }}
       >
-        <div>
-          <p className="font-playfair font-semibold text-4xl">
-            SKILLS & <span className="text-aqua">EXPERIENCE</span>
-          </p>
-          <div className="flex justify-center mt-5">
-            <LineGradient width="w-2/3" />
-          </div>
-        </div>
-        <p className="mt-10 mb-10">
-          Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-          fames odio in at. At magna ornare dictum lectus. Purus massa morbi
-          purus nec eget eleifend ut elit.
+        <p className="font-playfair font-semibold text-4xl mb-5">
+          SKILLS &<span className="text-aqua">EXPERIENCE</span> 
         </p>
+        <LineGradient width="mx-auto w-3/5" />
       </motion.div>
 
-      <div className="w-full flex-col md:mt-12 flex md:flex-row">
+      <div className="w-full flex-col md:mt-24 flex md:flex-row">
         <motion.div
           className="mr-0 justify-center items-center md:mr-10 flex 
           flex-1 flex-wrap md:justify-start md:items-start"
