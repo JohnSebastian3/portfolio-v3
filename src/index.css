@@ -9,6 +9,15 @@ body,
 #root,
 .app {
   height: 100%;
-  color: #010266;
+  background-color: #343A40;
+  letter-spacing: 2px;
   @apply text-steel;
+}
+
+h4 {
+  @apply text-lg md:text-2xl;
+}
+
+p, a {
+  @apply text-base md:text-xl;
 }
