@@ -1,24 +1,27 @@
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
+import {useRef, useEffect} from 'react';
 import { useInViewport } from "react-in-viewport";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Landing = ({ setSelectedPage }) => {
+
   const landingRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(landingRef);
+  const { inViewport, enterCount, leaveCount } = useInViewport(
+    landingRef,
+  );
 
   useEffect(() => {
-    if (inViewport) {
-      setSelectedPage("home");
+    if(inViewport) {
+      setSelectedPage('home');
     }
-  }, [inViewport]);
+  }, [inViewport])
 
   return (
     <section
       id="home"
-      className="flex items-center md:h-full gap-16 py-10 mt-28 md:mt-10"
+      className="flex items-center h-full gap-16 py-10 mt-24 md:mt-10 overflow-x-hidden"
       ref={landingRef}
     >
       {/* MAIN SECTION */}
