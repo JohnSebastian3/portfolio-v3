@@ -11,7 +11,7 @@ const Link = ({ page, selectedPage, setSelectedPage, isTopOfPage }) => {
     <AnchorLink
       className={`${
         selectedPage === lowerCasePage ? `${isTopOfPage ? "text-aqua" : "text-charcoal"}` : ""
-      }  transition duration-500`}
+      }  transition duration-200`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
@@ -26,7 +26,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const navbarBackground = isTopOfPage ? "" : "bg-aqua"
 
   return (
-    <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-4`}>
+    <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-4 transition duration-200`}>
       <div className="flex items-center justify-between mx-auto w-5/6 sm:w-2/3">
         <h4 className="font-dosis text-3xl font-bold">JG</h4>
 
