@@ -78,10 +78,10 @@ const Projects = ({setSelectedPage}) => {
                 A web app to create and maintain a personal budget.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://betterbudget.up.railway.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/better-budget" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -96,10 +96,10 @@ const Projects = ({setSelectedPage}) => {
                 real-time market data.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://divbyte.up.railway.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/divbyte-stock-tracker" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -113,10 +113,10 @@ const Projects = ({setSelectedPage}) => {
                 A beautiful, responsive website for a client.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://www.bellasalonoceanside.com/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/bella-hair-salon-v2" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -135,10 +135,10 @@ const Projects = ({setSelectedPage}) => {
                 dinners.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://cleave.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/cleave" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -153,10 +153,10 @@ const Projects = ({setSelectedPage}) => {
                 books in your library.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://johnsebastian3.github.io/libberly/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/libberly" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -170,10 +170,10 @@ const Projects = ({setSelectedPage}) => {
                 A fully responsive design and layout for a salon business.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://jgsalon.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/luxury-salon" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -187,10 +187,10 @@ const Projects = ({setSelectedPage}) => {
                 A fully responsive desgin and layout for local MMA Gym.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://jitsunomma.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/jitsuno-mma" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>
@@ -204,10 +204,10 @@ const Projects = ({setSelectedPage}) => {
                 An elegant design and layout for a sample Dashboard.
               </p>
               <div className="flex gap-6">
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://johnsebastian3.github.io/admin-dashboard/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiExternalLink className="text-xl" />
                 </a>
-                <a href="" className="hover:text-aqua transition duration-200">
+                <a href="https://github.com/JohnSebastian3/admin-dashboard" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
                   <FiGithub className="text-xl" />
                 </a>
               </div>

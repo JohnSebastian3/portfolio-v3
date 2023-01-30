@@ -1,22 +1,19 @@
 import { motion } from "framer-motion";
-import {useRef, useEffect} from 'react';
+import { useRef, useEffect } from "react";
 import { useInViewport } from "react-in-viewport";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Landing = ({ setSelectedPage }) => {
-
   const landingRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(
-    landingRef,
-  );
+  const { inViewport, enterCount, leaveCount } = useInViewport(landingRef);
 
   useEffect(() => {
-    if(inViewport) {
-      setSelectedPage('home');
+    if (inViewport) {
+      setSelectedPage("home");
     }
-  }, [inViewport])
+  }, [inViewport]);
 
   return (
     <section
