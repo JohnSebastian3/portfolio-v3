@@ -43,7 +43,7 @@ const Projects = ({setSelectedPage}) => {
   items-center text-center text-steel`;
 
   return (
-    <section id="projects" className="py-28 md:py-36" ref={projectsRef}>
+    <section id="projects" className="py-28 md:py-36 overflow-x-hidden" ref={projectsRef}>
       {/* HEADINGS */}
       <motion.div
         className="md:w-1/2 text-center md:text-left"
@@ -65,10 +65,10 @@ const Projects = ({setSelectedPage}) => {
       {/* PROJECTS */}
       <div className="flex justify-center mt-24">
         <motion.div
-          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-5"
+          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-5"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={container}
         >
           <motion.div variants={projectVariant} className="relative">
