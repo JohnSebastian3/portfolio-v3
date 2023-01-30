@@ -19,7 +19,7 @@ const About = ({setSelectedPage}) => {
   }, [inViewport])
 
   return (
-    <section id="about" className="py-28 md:py-36" ref={aboutRef}>
+    <section id="about" className="py-28 md:py-36 overflow-x-hidden" ref={aboutRef}>
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
