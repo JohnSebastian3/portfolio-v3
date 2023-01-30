@@ -29,7 +29,7 @@ const Contact = ({ setSelectedPage }) => {
   };
 
   return (
-    <section id="contact" className="py-28 md:py-36" ref={contactRef}>
+    <section id="contact" className="py-28 md:py-36 overflow-x-hidden" ref={contactRef}>
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
