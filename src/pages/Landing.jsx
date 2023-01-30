@@ -12,6 +12,8 @@ const Landing = ({ setSelectedPage }) => {
     landingRef,
   );
 
+  console.log(inViewport);
+
   useEffect(() => {
     if(inViewport) {
       setSelectedPage('home');
@@ -40,14 +42,14 @@ const Landing = ({ setSelectedPage }) => {
           <span className="text-aqua text-md md:text-lg ">Hi! My name is</span>
           <p
             className="w-full sm:max-w-[550px] md:max-w-none text-3xl xs:text-4xl 
-                      sm:text-5xl md:text-6xl font-dosis z-10 mt-2 mb-2 md:mt-6 md:mb-6 font-bold"
+                      sm:text-5xl md:text-7xl font-dosis z-10 mt-2 mb-2 md:mt-6 md:mb-6 font-bold"
           >
             John {""}
             Guerrero,
           </p>
           <p
             className="w-full sm:max-w-[550px] md:max-w-none text-iron 
-                      text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold"
+                      text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold"
           >
             Full-Stack Web Developer.
           </p>
@@ -75,7 +77,7 @@ const Landing = ({ setSelectedPage }) => {
         >
           <AnchorLink
             className="bg-gradient-aqua text-charcoal rounded-sm py-2 px-4 xs:px-7 font-semibold
-             hover:bg-blue hover:text-white transition duration-500"
+             hover:bg-blue hover:text-white transition duration-200"
             onClick={() => setSelectedPage("contact")}
             href="#projects"
           >
@@ -87,7 +89,7 @@ const Landing = ({ setSelectedPage }) => {
             href="#contact"
           >
             <div
-              className="bg-charcoal hover:text-aqua transition duration-500 w-full 
+              className="bg-charcoal hover:text-aqua transition duration-200 w-full 
             h-full flex items-center justify-center px-4 xs:px-7 "
             >
               Contact
