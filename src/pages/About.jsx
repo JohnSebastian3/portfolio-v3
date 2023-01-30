@@ -19,7 +19,7 @@ const About = ({setSelectedPage}) => {
   }, [inViewport])
 
   return (
-    <section id="about" className="pt-32 pb-32" ref={aboutRef}>
+    <section id="about" className="py-28 md:py-36" ref={aboutRef}>
       {/* HEADING */}
       <motion.div
         className="md:w-1/3 text-center md:text-left"
@@ -81,13 +81,13 @@ const About = ({setSelectedPage}) => {
         >
           <div
             className="absolute h-full w-full opacity-20 hover:opacity-0
-                  transition duration-300 bg-aqua z-30 
+                  transition duration-200 bg-aqua z-30 
                   "
           ></div>
           <img
             src={profile}
             alt="profile"
-            className="rounded-md transition duration-100"
+            className="rounded-md transition duration-200"
           />
         </motion.div>
       </div>

@@ -35,7 +35,7 @@ const MySkills = ({setSelectedPage}) => {
   }, [inViewport])
 
   return (
-    <section id="skills" className="pt-32 pb-32 md:pt-36 md:pb-36" ref={skillsRef}>
+    <section id="skills" className="py-28 md:py-36" ref={skillsRef}>
       <motion.div
         className="md:w-1/2 text-center md:text-left"
         initial="hidden"
@@ -55,13 +55,13 @@ const MySkills = ({setSelectedPage}) => {
 
       <div className="w-full flex-col md:mt-24 flex md:flex-row">
         <motion.div
-          className="mr-0 justify-center items-center md:mr-10 flex 
+          className="mr-0 mt-8 justify-center items-center md:mr-10 flex 
           flex-1 flex-wrap md:justify-start md:items-start"
         >
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[65px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[65px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -74,7 +74,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -87,7 +87,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -100,7 +100,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -113,7 +113,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -126,7 +126,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -139,7 +139,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -152,7 +152,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -165,7 +165,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -178,7 +178,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -191,7 +191,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -204,7 +204,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -217,7 +217,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -230,7 +230,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -243,7 +243,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -256,7 +256,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
@@ -269,7 +269,7 @@ const MySkills = ({setSelectedPage}) => {
           <motion.div
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-300 w-[60px] md:w-[80px]"
+            className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
               className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 

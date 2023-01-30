@@ -29,7 +29,7 @@ const Contact = ({ setSelectedPage }) => {
   };
 
   return (
-    <section id="contact" className="py-48" ref={contactRef}>
+    <section id="contact" className="py-28 md:py-36" ref={contactRef}>
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -128,7 +128,7 @@ const Contact = ({ setSelectedPage }) => {
             <button
               type="submit"
               className="p-5 bg-dark-aqua font-semibold text-charcoal mt-5 hover:bg-light-aqua
-              hover:text-charcoal transition duration-300 rounded-sm"
+              hover:text-charcoal transition duration-200 rounded-sm"
             >
               Send Message
             </button>
