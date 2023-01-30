@@ -25,7 +25,7 @@ const SocialMediaIcons = () => {
       </a>
       <a
         className="hover:text-light-aqua transition duration-200"
-        href="https://twitter.com/SebaCodes"
+        href="https://github.com/JohnSebastian3"
         target="_blank"
         rel="noreferrer"
       >
