@@ -55,7 +55,7 @@ const MySkills = ({setSelectedPage}) => {
 
       <div className="w-full flex-col md:mt-24 flex md:flex-row">
         <motion.div
-          className="mr-0 mt-8 justify-center items-center md:mr-10 flex 
+          className="mr-0 justify-center items-center md:mr-10 flex 
           flex-1 flex-wrap md:justify-start md:items-start"
         >
           <motion.div
