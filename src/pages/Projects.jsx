@@ -39,11 +39,11 @@ const Projects = ({setSelectedPage}) => {
   };
 
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90
-  transition duration-300 bg-carbon z-30 flex flex-col justify-center 
+  transition duration-200 bg-carbon z-30 flex flex-col justify-center 
   items-center text-center text-steel`;
 
   return (
-    <section id="projects" className="pt-32 pb-32" ref={projectsRef}>
+    <section id="projects" className="py-28 md:py-36" ref={projectsRef}>
       {/* HEADINGS */}
       <motion.div
         className="md:w-1/2 text-center md:text-left"
