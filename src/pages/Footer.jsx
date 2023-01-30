@@ -5,13 +5,10 @@ const Footer = () => {
   return (
     <footer className="h-64 bg-aqua pt-10">
       <div className="w-5/6 md:w-2/3 mx-auto">
+        <div className="flex flex-col justift-center items-center justify-between text-center">
         <SocialMediaIcons />
-        <div className="md:flex justift-center md:justify-between text-center">
-          <span className="font-semibold text-2xl text-charcoal">
-            John Guerrero
-          </span>
           <small className="text-base text-charcoal">
-            @2023 All rights reserved.
+            Homebrewed by John Guerrero &copy; 2023
           </small>
         </div>
       </div>
