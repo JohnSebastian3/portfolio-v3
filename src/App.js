@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./pages/Navbar";
 import DotGroup from "./pages/DotGroup";
 import Landing from "./pages/Landing";
 import LineGradient from "./components/LineGradient";
 import MySkills from "./pages/MySkills";
-import Projects from './pages/Projects';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Footer from './pages/Footer';
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -17,16 +18,16 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if(isAboveMediumScreens) {
+      if (isAboveMediumScreens) {
         if (window.scrollY < 800) {
           setIsTopOfPage(true);
         } else if (window.scrollY > 800) {
           setIsTopOfPage(false);
         }
       } else {
-        if(window.scrollY < 400) {
+        if (window.scrollY < 100) {
           setIsTopOfPage(true);
-        } else if(window.scrollY > 400) {
+        } else if (window.scrollY > 100) {
           setIsTopOfPage(false);
         }
       }
@@ -37,11 +38,11 @@ function App() {
 
   return (
     <div className="app bg-charcoal font-dosis">
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
+        <Navbar
+          isTopOfPage={isTopOfPage}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       <div className="w-5/6 sm:w-2/3 mx-auto md:h-full">
         {isAboveMediumScreens && (
           <DotGroup
@@ -53,19 +54,19 @@ function App() {
       </div>
       <LineGradient />
       <div className="w-5/6 xs:w-2/3 sm:w-5/6 mx-auto">
-        <Projects setSelectedPage={setSelectedPage}/>
+        <Projects setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
-        <MySkills setSelectedPage={setSelectedPage}/>
+        <MySkills setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
-        <About setSelectedPage={setSelectedPage}/>
+        <About setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
-        <Contact setSelectedPage={setSelectedPage}/>
+        <Contact setSelectedPage={setSelectedPage} />
       </div>
       <Footer />
     </div>
