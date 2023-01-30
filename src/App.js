@@ -17,10 +17,18 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true);
-      } else if (window.scrollY !== 0) {
-        setIsTopOfPage(false);
+      if(isAboveMediumScreens) {
+        if (window.scrollY < 800) {
+          setIsTopOfPage(true);
+        } else if (window.scrollY > 800) {
+          setIsTopOfPage(false);
+        }
+      } else {
+        if(window.scrollY < 400) {
+          setIsTopOfPage(true);
+        } else if(window.scrollY > 400) {
+          setIsTopOfPage(false);
+        }
       }
     };
     window.addEventListener("scroll", handleScroll);
