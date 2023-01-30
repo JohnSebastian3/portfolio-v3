@@ -35,7 +35,7 @@ const MySkills = ({setSelectedPage}) => {
   }, [inViewport])
 
   return (
-    <section id="skills" className="py-28 md:py-36" ref={skillsRef}>
+    <section id="skills" className="py-28 md:py-36 overflow-x-hidden" ref={skillsRef}>
       <motion.div
         className="md:w-1/2 text-center md:text-left"
         initial="hidden"
@@ -48,7 +48,7 @@ const MySkills = ({setSelectedPage}) => {
         }}
       >
         <p className="font-playfair font-semibold text-4xl mb-5">
-          SKILLS &<span className="text-aqua">EXPERIENCE</span> 
+          SKILLS &<span className="text-aqua"> EXPERIENCE</span> 
         </p>
         <LineGradient width="mx-auto w-3/5" />
       </motion.div>
