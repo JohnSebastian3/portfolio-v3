@@ -8,7 +8,7 @@ const SocialMediaIcons = () => {
   return (
     <div className="flex justify-center md:justify-start my-10 gap-7">
       <a
-        className="hover:text-aqua transition duration-500"
+        className="hover:text-light-aqua transition duration-200"
         href="https://www.linkedin.com/in/johnsguerrero/"
         target="_blank"
         rel="noreferrer"
@@ -16,7 +16,7 @@ const SocialMediaIcons = () => {
         <AiFillLinkedin size={'35px'} />
       </a>
       <a
-        className="hover:text-aqua transition duration-500"
+        className="hover:text-light-aqua transition duration-200"
         href="https://twitter.com/SebaCodes"
         target="_blank"
         rel="noreferrer"
@@ -24,7 +24,7 @@ const SocialMediaIcons = () => {
         <AiOutlineTwitter size={'35px'}/>
       </a>
       <a
-        className="hover:text-aqua transition duration-500"
+        className="hover:text-light-aqua transition duration-200"
         href="https://twitter.com/SebaCodes"
         target="_blank"
         rel="noreferrer"
