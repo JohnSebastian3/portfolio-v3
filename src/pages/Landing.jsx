@@ -12,8 +12,6 @@ const Landing = ({ setSelectedPage }) => {
     landingRef,
   );
 
-  console.log(inViewport);
-
   useEffect(() => {
     if(inViewport) {
       setSelectedPage('home');
