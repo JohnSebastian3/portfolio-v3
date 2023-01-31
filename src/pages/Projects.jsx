@@ -23,7 +23,7 @@ const Projects = ({setSelectedPage}) => {
   useEffect(() => {
     if(inViewport) {
       setSelectedPage('projects');
-    }
+    } 
   }, [inViewport])
 
   const container = {

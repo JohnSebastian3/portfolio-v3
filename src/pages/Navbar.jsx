@@ -20,7 +20,7 @@ const Link = ({
         selectedPage === lowerCasePage
           ? `${isTopOfPage ? "text-aqua" : "text-charcoal"}`
           : ""
-      }  transition duration-200`}
+      }  transition duration-200 hover:${isTopOfPage ? 'text-aqua' : 'text-charcoal'}`}
       href={`#${lowerCasePage}`}
       onClick={() => {
         setSelectedPage(lowerCasePage);
@@ -52,30 +52,35 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               isTopOfPage={isTopOfPage}
+              setIsMenuToggled={setIsMenuToggled}
             />
             <Link
               page="Projects"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               isTopOfPage={isTopOfPage}
+              setIsMenuToggled={setIsMenuToggled}
             />
             <Link
               page="Skills"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               isTopOfPage={isTopOfPage}
+              setIsMenuToggled={setIsMenuToggled}
             />
             <Link
               page="About"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               isTopOfPage={isTopOfPage}
+              setIsMenuToggled={setIsMenuToggled}
             />
             <Link
               page="Contact"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               isTopOfPage={isTopOfPage}
+              setIsMenuToggled={setIsMenuToggled}
             />
           </div>
         ) : (
