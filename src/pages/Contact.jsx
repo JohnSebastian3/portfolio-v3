@@ -29,7 +29,7 @@ const Contact = ({ setSelectedPage }) => {
   };
 
   return (
-    <section id="contact" className="py-28 md:py-36 overflow-x-hidden" ref={contactRef}>
+    <section id="contact" className="py-28 overflow-x-hidden" ref={contactRef}>
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -40,14 +40,17 @@ const Contact = ({ setSelectedPage }) => {
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="flex md:justify-end justify-center w-full"
+        className=""
       >
         <div>
-          <p className="font-playfair font-semibold text-4xl">
+          <p className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
+                      border-b border-aqua border-opacity-40 md:text-4xl mb-5 
+                      before:hidden xs:border-none xs:before:block before:h-[1px] before:flex-1 before:bg-aqua 
+                     before:bg-opacity-40 before:relative before:top-5 before:ml-[20px]  ">
             <span className="text-aqua">CONTACT</span> ME
           </p>
           <div className="flex justify-center md:justify-end my-5">
-            <LineGradient width="w-5/6" />
+         
           </div>
         </div>
       </motion.div>
