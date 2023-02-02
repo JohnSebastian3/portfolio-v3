@@ -1,30 +1,28 @@
 import { useEffect, useRef } from "react";
 import { useInViewport } from "react-in-viewport";
-import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
-import project5 from "../assets/project5.png";
-import project6 from "../assets/project6.png";
-import project7 from "../assets/project7.png";
-import project8 from "../assets/project8.png";
 import { FiExternalLink } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
+import useMediaQuery from "../hooks/useMediaQuery";
 
-const Projects = ({setSelectedPage}) => {
+const Projects = ({ setSelectedPage }) => {
+
+  const isAboveExtraSmallScreens = useMediaQuery("(min-width: 480px)");
+
+
   const projectsRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(
-    projectsRef,
-  );
+  const { inViewport, enterCount, leaveCount } = useInViewport(projectsRef);
 
   useEffect(() => {
-    if(inViewport) {
-      setSelectedPage('projects');
-    } 
-  }, [inViewport])
+    if (inViewport) {
+      setSelectedPage("projects");
+    }
+  }, [inViewport]);
 
   const container = {
     hidden: {},
@@ -33,20 +31,21 @@ const Projects = ({setSelectedPage}) => {
     },
   };
 
-  const projectVariant = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
+  const projectVariant1 = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
   };
 
-  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90
-  transition duration-200 bg-carbon z-30 flex flex-col justify-center 
-  items-center text-center text-steel`;
+  const projectVariant2 = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   return (
-    <section id="projects" className="py-28 md:py-36 overflow-x-hidden" ref={projectsRef}>
+    <section id="projects" className="py-28 " ref={projectsRef}>
       {/* HEADINGS */}
       <motion.div
-        className="md:w-1/2 text-center md:text-left"
+        className="text-center md:text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -56,169 +55,393 @@ const Projects = ({setSelectedPage}) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="font-playfair font-semibold text-4xl mb-5">
+        <p
+          className="flex pb-2 w-full font-semibold justify-center text-3xl 
+                      border-b border-aqua border-opacity-40 md:text-4xl mb-5 
+                      after:hidden xs:border-none xs:after:block after:h-[1px] after:flex-1 after:bg-aqua 
+                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px]"
+        >
           <span className="text-aqua">PRO</span>JECTS
         </p>
-        <LineGradient width="mx-auto w-3/5" />
+        {/* <LineGradient width="mx-auto w-3/5" /> */}
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-center mt-24">
-        <motion.div
-          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-3"
+      <div className="flex flex-col gap-24 mt-24">
+        {/* <motion.div
+          className="flex flex-col "
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={container}
+        > */}
+        <motion.div
+          variants={projectVariant1}
+          className="relative flex  flex-col lg:flex-row items-center gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
         >
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">BetterBudget</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A web app to create and maintain a personal budget.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://betterbudget.up.railway.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/better-budget" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
+          <div className="h-auto w-fit shadow-2xl">
+            <img
+              src={project1}
+              alt={"BetterBudget"}
+              className="md:h-[325px] w-full "
+            />
+          </div>
+          <div className="lg:absolute  lg:text-right lg:right-0  text-left flex flex-col gap-3 lg:items-end">
+            <h2 className="text-2xl md:text-3xl">BetterBudget</h2>
+            <p className="lg:max-w-[450px] shadow-lg bg-carbon bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2">
+              BetterBudget simplifies the budgeting process so you can have more
+              time in your day along with more money in your pocket at the end
+              of each month. You can customize and personalize your budget,
+              track expenses and income, and even plan budgets for the future.
+            </p>
+            <div className="flex flex-wrap gap-3 max-w-[450px] text-iron justify-start lg:justify-end">
+              <span>React</span>
+              <span>Styled Components</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MongoDB</span>
             </div>
-            <img src={project1} alt={"BetterBudget"} className="rounded-md" />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">DivByte</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A web app to keep track of your own stock portfolio using
-                real-time market data.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://divbyte.up.railway.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/divbyte-stock-tracker" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
+            <div className="flex gap-6 lg:justify-end justify-start">
+              <a
+                href="https://betterbudget.up.railway.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/better-budget"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
             </div>
-            <img src={project2} alt={"DivByte"} className="rounded-md" />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">Bella Hair Salon</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A beautiful, responsive website for a client.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://www.bellasalonoceanside.com/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/bella-hair-salon-v2" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
+          </div>
+        </motion.div>
+        <motion.div
+          variants={projectVariant2}
+          className="relative flex justify-end flex-col lg:flex-row items-center gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="h-auto w-fit shadow-2xl">
+            <img
+              src={project2}
+              alt={"BetterBudget"}
+              className="md:h-[325px]  w-full"
+            />
+          </div>
+          <div className="lg:absolute left-0 text-left flex flex-col gap-3 lg:items-start">
+            <h2 className="text-2xl md:text-3xl">DivByte</h2>
+            <p className="lg:max-w-[450px] shadow-lg bg-carbon bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2">
+              A fully responsive Full-Stack application where users can add and
+              track their stock performance with real time market data. Users
+              can create a profile, research stock metrics, leave comments, and
+              check in everyday to see how their portfolio is performing.
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 max-w-[450px] text-iron justify-start">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>EJS</span>
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MongoDB</span>
             </div>
+            <div className="flex gap-6 lg:justify-end justify-start">
+              <a
+                href="https://divbyte.up.railway.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/divbyte-stock-tracker"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div
+          variants={projectVariant1}
+          className="relative flex justify-start flex-col lg:flex-row items-center gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="h-auto w-fit shadow-2xl">
             <img
               src={project3}
-              alt={"Bella Hair Salon"}
-              className="rounded-md"
+              alt={"BetterBudget"}
+              className="md:h-[325px]  w-full"
             />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">Cleave</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A sleek web app to quickly determine tip amounts for group
-                dinners.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://cleave.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/cleave" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
+          </div>
+          <div className="lg:absolute lg:right-0 lg:text-right text-left flex flex-col gap-3 lg:items-end">
+            <h2 className="text-2xl md:text-3xl">Bella Hair Salon</h2>
+            <p className="lg:max-w-[450px] shadow-lg bg-carbon bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2">
+              A beautiful, responsive website made for a client. Salon customers
+              can see prices, hours, location, recent work, and more. Website
+              includes a contact form to schedule appointments and/or ask
+              questions.
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 max-w-[450px] text-iron justify-start lg:justify-end">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
             </div>
-            <img src={project4} alt={"Cleave"} className="rounded-md" />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">Libberly</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A minimalistic library app to keep track of read and unread
-                books in your library.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://johnsebastian3.github.io/libberly/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/libberly" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
+            <div className="flex gap-6 lg:justify-end justify-start">
+              <a
+                href="https://www.bellasalonoceanside.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/bella-hair-salon-v2"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
             </div>
-            <img src={project5} alt={"Libberly"} className="rounded-md" />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">Luxury Salon</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A fully responsive design and layout for a salon business.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://jgsalon.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/luxury-salon" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
-            </div>
-            <img src={project6} alt={"Luxury Salon"} className="rounded-md" />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">Jitsuno MMA</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                A fully responsive desgin and layout for local MMA Gym.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://jitsunomma.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/jitsuno-mma" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
-            </div>
-            <img src={project7} alt={"Jitsuno MMA"} className="rounded-md" />
-          </motion.div>
-          <motion.div variants={projectVariant} className="relative">
-            <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base md:text-xl font-bold">Admin Dashboard</p>
-              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
-                An elegant design and layout for a sample Dashboard.
-              </p>
-              <div className="flex gap-6">
-                <a href="https://johnsebastian3.github.io/admin-dashboard/" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiExternalLink className="text-xl" />
-                </a>
-                <a href="https://github.com/JohnSebastian3/admin-dashboard" target="_blank" rel="noreferrer" className="hover:text-aqua transition duration-200">
-                  <FiGithub className="text-xl" />
-                </a>
-              </div>
-            </div>
-            <img
-              src={project8}
-              alt={"Admin Dashboard"}
-              className="rounded-md"
-            />
-          </motion.div>
+          </div>
         </motion.div>
+        <motion.div
+          variants={projectVariant2}
+          className="relative flex justify-end flex-col lg:flex-row items-center gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="h-auto w-fit shadow-2xl ">
+            <img
+              src={project4}
+              alt={"BetterBudget"}
+              className="md:h-[325px]  w-full"
+            />
+          </div>
+          <div className="lg:absolute left-0 text-left flex flex-col gap-3 lg:items-start">
+            <h2 className="text-2xl md:text-3xl">Cleave</h2>
+            <p className="lg:max-w-[450px] shadow-lg bg-carbon bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2">
+              Cleave is a sleek tip calculator. Set the amount of the bill, the
+              percentage you want to tip, and the number of people, and Cleave
+              will split your bill for you. It will determine how much you
+              should tip, and how much each person should tip.
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 max-w-[450px] text-iron justify-start lg:justify-end">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+            <div className="flex gap-6 lg:justify-end justify-start">
+              <a
+                href="https://cleave.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/cleave"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        <div>
+          <h2 className="text-2xl md:text-3xl text-aqua text-center">
+            Honorable Mentions
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 grid-rows-4 gap-4 xs:grid-cols-2 xs:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="bg-carbon py-6 px-4 rounded-md relative shadow-lg h-[300px] bg-opacity-60"
+          >
+            <h2 className="text-aqua text-2xl md:text-3xl">Libberly</h2>
+            <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4 relative py-4 rounded-md z-2">
+              A minimalistic library app to keep track of read and unread books
+              in your library.
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 justify-end text-iron absolute bottom-10 right-4 text-xs sm:text-base">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+            <div className="flex gap-6 lg:justify-end justify-start absolute bottom-4 right-4">
+              <a
+                href="https://johnsebastian3.github.io/libberly/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/libberly"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="bg-carbon py-6 px-4 rounded-md relative shadow-lg bg-opacity-60"
+          >
+            <h2 className="text-aqua text-2xl md:text-3xl">Luxury Salon</h2>
+            <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4 relative py-4 rounded-md z-2">
+              A fully responsive design and layout for a salon business.
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 text-iron justify-end absolute bottom-10 right-4 text-xs sm:text-base">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+            <div className="flex gap-6 lg:justify-end justify-start absolute bottom-4 right-4">
+              <a
+                href="https://jgsalon.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/luxury-salon"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="bg-carbon py-6 px-4 rounded-md relative shadow-lg bg-opacity-60"
+          >
+            <h2 className="text-aqua text-2xl md:text-3xl">Jitsuno MMA</h2>
+            <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4 relative py-4 rounded-md z-2">
+              A fully responsive desgin and layout for local MMA Gym.
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 text-iron justify-end absolute bottom-10 right-4 text-xs sm:text-base">
+              <span>HTML5</span>
+              <span>CSS3</span>
+            </div>
+            <div className="flex gap-6 lg:justify-end justify-start absolute bottom-4 right-4">
+              <a
+                href="https://jitsunomma.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/jitsuno-mma"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            className="bg-carbon py-6 px-4 rounded-md relative shadow-lg bg-opacity-60"
+          >
+            <h2 className="text-aqua text-2xl md:text-3xl">Admin Dashboard</h2>
+            <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4relative py-4 rounded-md z-2">
+              An elegant design and layout for a sample Dashboard
+            </p>
+            <div className="mb-4 flex flex-wrap gap-3 text-iron justify-end absolute bottom-10 right-4 text-xs sm:text-base">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+            <div className="flex gap-6 lg:justify-end justify-start absolute bottom-4 right-4">
+              <a
+                href="https://johnsebastian3.github.io/admin-dashboard/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiExternalLink className="text-2xl" />
+              </a>
+              <a
+                href="https://github.com/JohnSebastian3/admin-dashboard"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-aqua transition duration-200"
+              >
+                <FiGithub className="text-2xl" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
