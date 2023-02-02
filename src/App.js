@@ -53,7 +53,7 @@ function App() {
         <Landing setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
-      <div className="w-5/6 xs:w-2/3 sm:w-5/6 mx-auto">
+      <div className="w-5/6 sm:w-2/3 mx-auto">
         <Projects setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />

@@ -65,7 +65,7 @@ const Projects = ({setSelectedPage}) => {
       {/* PROJECTS */}
       <div className="flex justify-center mt-24">
         <motion.div
-          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-5"
+          className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -73,8 +73,8 @@ const Projects = ({setSelectedPage}) => {
         >
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">BetterBudget</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">BetterBudget</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A web app to create and maintain a personal budget.
               </p>
               <div className="flex gap-6">
@@ -90,8 +90,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">DivByte</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">DivByte</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A web app to keep track of your own stock portfolio using
                 real-time market data.
               </p>
@@ -108,8 +108,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">Bella Hair Salon</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">Bella Hair Salon</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A beautiful, responsive website for a client.
               </p>
               <div className="flex gap-6">
@@ -129,8 +129,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">Cleave</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">Cleave</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A sleek web app to quickly determine tip amounts for group
                 dinners.
               </p>
@@ -147,8 +147,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">Libberly</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">Libberly</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A minimalistic library app to keep track of read and unread
                 books in your library.
               </p>
@@ -165,8 +165,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">Luxury Salon</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">Luxury Salon</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A fully responsive design and layout for a salon business.
               </p>
               <div className="flex gap-6">
@@ -182,8 +182,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">Jitsuno MMA</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">Jitsuno MMA</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 A fully responsive desgin and layout for local MMA Gym.
               </p>
               <div className="flex gap-6">
@@ -199,8 +199,8 @@ const Projects = ({setSelectedPage}) => {
           </motion.div>
           <motion.div variants={projectVariant} className="relative">
             <div className={`${overlayStyles} rounded-md`}>
-              <p className="text-base xs:text-xl font-bold">Admin Dashboard</p>
-              <p className="mt-2 mb-4 xs:mt-4 xs:mb-6 text-xs xs:text-sm px-1 sm:px-4">
+              <p className="text-base md:text-xl font-bold">Admin Dashboard</p>
+              <p className="mt-2 mb-4 px-1 xs:mt-1 xs:mb-2 md:mt-2 md:mb-4 text-xs xs:text-sm">
                 An elegant design and layout for a sample Dashboard.
               </p>
               <div className="flex gap-6">
