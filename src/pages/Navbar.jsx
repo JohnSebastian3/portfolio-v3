@@ -35,7 +35,7 @@ const Link = ({
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-aqua";
+  const navbarBackground = isTopOfPage ? "" : `bg-aqua ${isAboveSmallScreens ? 'shadow-lg backdrop-blur bg-opacity-90 ' : ''}`;
 
   return (
     <nav
