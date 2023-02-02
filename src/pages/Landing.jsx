@@ -111,7 +111,7 @@ const Landing = ({ setSelectedPage }) => {
         </motion.div>
       </div>
 
-      {/* {isAboveSmallScreens && ( */}
+      {isAboveSmallScreens && (
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -121,7 +121,7 @@ const Landing = ({ setSelectedPage }) => {
             hidden: { opacity: 0, y: -100 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="absolute bottom-10 right-0 left-0 flex justify-center"
+          className="absolute bottom-20 right-0 left-0 flex justify-center"
         >
           <AnchorLink
             onClick={() => setSelectedPage("projects")}
@@ -133,7 +133,7 @@ const Landing = ({ setSelectedPage }) => {
             />
           </AnchorLink>
         </motion.div>
-      {/* // )} */}
+      )}
     </section>
   );
 };
