@@ -19,5 +19,5 @@ h4 {
 }
 
 p, a {
-  @apply text-base md:text-xl;
+  @apply text-sm md:text-base;
 }
