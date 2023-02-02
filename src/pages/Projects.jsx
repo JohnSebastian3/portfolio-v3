@@ -7,16 +7,13 @@ import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
 import { FiExternalLink } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
-import useMediaQuery from "../hooks/useMediaQuery";
 
 const Projects = ({ setSelectedPage }) => {
-
-  const isAboveExtraSmallScreens = useMediaQuery("(min-width: 480px)");
-
-
   const projectsRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(projectsRef);
+  const { inViewport, enterCount, leaveCount } = useInViewport(projectsRef, {
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     if (inViewport) {

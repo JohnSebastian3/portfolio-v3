@@ -26,6 +26,7 @@ const MySkills = ({setSelectedPage}) => {
 
   const { inViewport, enterCount, leaveCount } = useInViewport(
     skillsRef,
+    {threshold: 0.1}
   );
 
   useEffect(() => {

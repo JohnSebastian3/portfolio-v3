@@ -12,7 +12,7 @@ const Landing = ({ setSelectedPage }) => {
   const landingRef = useRef();
 
   const { inViewport, enterCount, leaveCount } = useInViewport(landingRef);
-
+ 
   useEffect(() => {
     if (inViewport) {
       setSelectedPage("home");

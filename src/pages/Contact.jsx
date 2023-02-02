@@ -7,7 +7,9 @@ import { useInViewport } from "react-in-viewport";
 const Contact = ({ setSelectedPage }) => {
   const contactRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(contactRef);
+  const { inViewport, enterCount, leaveCount } = useInViewport(contactRef, {
+    threshold: 0.3,
+  });
 
   useEffect(() => {
     if (inViewport) {
@@ -43,15 +45,15 @@ const Contact = ({ setSelectedPage }) => {
         className=""
       >
         <div>
-          <p className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
+          <p
+            className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
                       border-b border-aqua border-opacity-40 md:text-4xl mb-5 
                       before:hidden xs:border-none xs:before:block before:h-[1px] before:flex-1 before:bg-aqua 
-                     before:bg-opacity-40 before:relative before:top-5 before:ml-[20px]  ">
+                     before:bg-opacity-40 before:relative before:top-5 before:ml-[20px]  "
+          >
             <span className="text-aqua">CONTACT</span> ME
           </p>
-          <div className="flex justify-center md:justify-end my-5">
-         
-          </div>
+          <div className="flex justify-center md:justify-end my-5"></div>
         </div>
       </motion.div>
 
