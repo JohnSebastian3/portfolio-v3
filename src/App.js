@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
-import { AnimatePresence } from "framer-motion";
 import Navbar from "./pages/Navbar";
 import DotGroup from "./pages/DotGroup";
 import Landing from "./pages/Landing";
-import LineGradient from "./components/LineGradient";
 import MySkills from "./pages/MySkills";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
@@ -19,15 +17,15 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       if (isAboveMediumScreens) {
-        if (window.scrollY < 800) {
+        if (window.scrollY < 600) {
           setIsTopOfPage(true);
-        } else if (window.scrollY > 800) {
+        } else if (window.scrollY > 600) {
           setIsTopOfPage(false);
         }
       } else {
-        if (window.scrollY < 100) {
+        if (window.scrollY < 90) {
           setIsTopOfPage(true);
-        } else if (window.scrollY > 100) {
+        } else if (window.scrollY > 90) {
           setIsTopOfPage(false);
         }
       }
@@ -43,7 +41,7 @@ function App() {
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />
-      <div className="w-5/6 sm:w-2/3 mx-auto md:h-full">
+      <div className="w-5/6 sm:w-2/3 mx-auto sm:h-full">
         {isAboveMediumScreens && (
           <DotGroup
             selectedPage={selectedPage}
@@ -52,19 +50,15 @@ function App() {
         )}
         <Landing setSelectedPage={setSelectedPage} />
       </div>
-      <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
         <Projects setSelectedPage={setSelectedPage} />
       </div>
-      <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
         <MySkills setSelectedPage={setSelectedPage} />
       </div>
-      <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
         <About setSelectedPage={setSelectedPage} />
       </div>
-      <LineGradient />
       <div className="w-5/6 sm:w-2/3 mx-auto">
         <Contact setSelectedPage={setSelectedPage} />
       </div>
