@@ -49,7 +49,7 @@ const Landing = ({ setSelectedPage }) => {
             className="w-full sm:max-w-[550px] md:max-w-none text-iron 
                       text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold"
           >
-            Full-Stack Web Developer.
+            A Software Engineer.
           </p>
           <p
             className="w-full xs:max-w-[400px] md:max-w-none mt-3 mb-3 md:mt-6 
