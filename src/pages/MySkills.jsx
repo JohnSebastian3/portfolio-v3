@@ -35,9 +35,9 @@ const MySkills = ({setSelectedPage}) => {
   }, [inViewport])
 
   return (
-    <section id="skills" className="py-28 md:py-36 overflow-x-hidden" ref={skillsRef}>
+    <section id="skills" className="py-28 " ref={skillsRef}>
       <motion.div
-        className="md:w-1/2 text-center md:text-left"
+        className="text-center md:text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -47,10 +47,12 @@ const MySkills = ({setSelectedPage}) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="font-playfair font-semibold text-4xl mb-5">
-          SKILLS &<span className="text-aqua"> EXPERIENCE</span> 
+        <p className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
+                      border-b border-aqua border-opacity-40 md:text-4xl mb-5 
+                      after:hidden xs:border-none xs:after:block after:h-[1px] after:flex-1 after:bg-aqua 
+                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px] ">
+          SKILLS & <span className="text-aqua">EXPERIENCE</span> 
         </p>
-        <LineGradient width="mx-auto w-3/5" />
       </motion.div>
 
       <div className="w-full flex-col md:mt-24 flex md:flex-row">
@@ -69,7 +71,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <AiFillHtml5 className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">HTML 5</p>
+            <p className="text-xs md:text-lg font-bold mt-2">HTML 5</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -82,7 +84,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <DiCss3 className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">CSS 3</p>
+            <p className="text-xs md:text-lg font-bold mt-2">CSS 3</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -95,7 +97,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <IoLogoJavascript className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">JavaScript</p>
+            <p className="text-xs md:text-lg font-bold mt-2">JavaScript</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -108,7 +110,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <SiTypescript className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">TypeScript</p>
+            <p className="text-xs md:text-lg font-bold mt-2">TypeScript</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -121,7 +123,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <FaReact className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">React</p>
+            <p className="text-xs md:text-lg font-bold mt-2">React</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -134,7 +136,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <SiRedux className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Redux</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Redux</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -147,7 +149,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <IoLogoNodejs className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Node.js</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Node.js</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -160,7 +162,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <SiExpress className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Express.js</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Express.js</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -173,7 +175,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <SiMongodb className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">MongoDB</p>
+            <p className="text-xs md:text-lg font-bold mt-2">MongoDB</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -186,7 +188,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <DiPostgresql className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">PostgreSQL</p>
+            <p className="text-xs md:text-lg font-bold mt-2">PostgreSQL</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -199,7 +201,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <DiPython className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Python</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Python</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -212,7 +214,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <DiJava className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Java</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Java</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -225,7 +227,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <SiPassport className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Passport.js</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Passport.js</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -238,7 +240,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <DiGit className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Git</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Git</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -251,7 +253,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <AiFillGithub className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Github</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Github</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -264,7 +266,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <DiNpm className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">NPM</p>
+            <p className="text-xs md:text-lg font-bold mt-2">NPM</p>
           </motion.div>
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -277,7 +279,7 @@ const MySkills = ({setSelectedPage}) => {
             >
               <SiPostman className="w-2/3 h-2/3 text-steel" />
             </div>
-            <p className="text-sm md:text-xl font-bold mt-2">Postman</p>
+            <p className="text-xs md:text-lg font-bold mt-2">Postman</p>
           </motion.div>
         </motion.div>
 
@@ -295,14 +297,6 @@ const MySkills = ({setSelectedPage}) => {
                 >
                   <h4 className="font-bold">Software Engineer</h4>
                   <p className="mt-1">100Devs</p>
-                </motion.div>
-                <motion.div
-                  whileInView={{ opacity: [0, 1] }}
-                  transition={{ duration: 0.5 }}
-                  className="flex flex-col justify-start items-start mb-4"
-                >
-                  <h4 className="font-bold">Freelance Web Developer</h4>
-                  <p className="mt-1">John's Consulting</p>
                 </motion.div>
               </>
             </motion.div>
