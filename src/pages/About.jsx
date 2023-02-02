@@ -19,10 +19,10 @@ const About = ({setSelectedPage}) => {
   }, [inViewport])
 
   return (
-    <section id="about" className="py-28 md:py-36 overflow-x-hidden" ref={aboutRef}>
+    <section id="about" className="py-28" ref={aboutRef}>
       {/* HEADING */}
       <motion.div
-        className="md:w-1/3 text-center md:text-left"
+        className="text-center md:text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -32,10 +32,12 @@ const About = ({setSelectedPage}) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="font-playfair font-semibold text-4xl mb-5">
-          <span className="text-aqua">ABOUT</span> ME
+        <p className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
+                      border-b border-aqua border-opacity-40 md:text-4xl mb-5 
+                      after:hidden xs:border-none xs:after:block after:h-[1px] after:flex-1 after:bg-aqua 
+                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px] ">
+          <span className="text-aqua">ABOUT</span> <span>ME</span>
         </p>
-        <LineGradient width="mx-auto w-3/5" />
       </motion.div>
 
       {/* ABOUT */}
