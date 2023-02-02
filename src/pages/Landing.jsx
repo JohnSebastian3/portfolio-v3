@@ -1,27 +1,28 @@
 import { motion } from "framer-motion";
-import {useRef, useEffect} from 'react';
+import { useRef, useEffect } from "react";
 import { useInViewport } from "react-in-viewport";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../components/SocialMediaIcons";
+import { BsArrowDownCircleFill } from "react-icons/bs";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Landing = ({ setSelectedPage }) => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
   const landingRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(
-    landingRef,
-  );
+  const { inViewport, enterCount, leaveCount } = useInViewport(landingRef);
 
   useEffect(() => {
-    if(inViewport) {
-      setSelectedPage('home');
+    if (inViewport) {
+      setSelectedPage("home");
     }
-  }, [inViewport])
+  }, [inViewport]);
 
   return (
     <section
       id="home"
-      className="flex items-center h-full gap-16 py-10 mt-24 md:mt-10 overflow-x-hidden"
+      className="flex items-center h-full gap-16 py-14 mt-36 sm:mt-0 relative"
       ref={landingRef}
     >
       {/* MAIN SECTION */}
@@ -75,7 +76,7 @@ const Landing = ({ setSelectedPage }) => {
         >
           <AnchorLink
             className="bg-gradient-aqua text-charcoal rounded-sm py-2 px-4 xs:px-7 font-semibold
-             hover:bg-blue hover:text-white transition duration-200"
+              hover:text-white transition duration-200"
             onClick={() => setSelectedPage("contact")}
             href="#projects"
           >
@@ -109,6 +110,30 @@ const Landing = ({ setSelectedPage }) => {
           <SocialMediaIcons />
         </motion.div>
       </div>
+
+      {isAboveSmallScreens && (
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.5, duration: 2, type: "spring" }}
+          variants={{
+            hidden: { opacity: 0, y: -100 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="absolute bottom-20 right-0 left-0 flex justify-center"
+        >
+          <AnchorLink
+            onClick={() => setSelectedPage("projects")}
+            href="#projects"
+          >
+            <BsArrowDownCircleFill
+              className="text-aqua text-4xl hover:cursor-pointer
+                       hover:-translate-y-1 transition duration-200 hover:text-light-aqua"
+            />
+          </AnchorLink>
+        </motion.div>
+      )}
     </section>
   );
 };
