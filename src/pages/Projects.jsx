@@ -277,7 +277,7 @@ const Projects = ({ setSelectedPage }) => {
 
         <div>
           <h2 className="text-2xl md:text-3xl text-aqua text-center">
-            Honorable Mentions
+            Other Projects
           </h2>
         </div>
 
