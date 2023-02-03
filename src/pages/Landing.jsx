@@ -22,7 +22,7 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <section
       id="home"
-      className="flex items-center h-full gap-16 py-14 mt-0 sm:mt-0 relative"
+      className="flex items-center h-full gap-16 py-14 mt-0 sm:mt-0 relative "
       ref={landingRef}
     >
       {/* MAIN SECTION */}

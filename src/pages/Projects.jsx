@@ -7,9 +7,12 @@ import project3 from "../assets/project3.png";
 import project4 from "../assets/project4.png";
 import { FiExternalLink } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Projects = ({ setSelectedPage }) => {
   const projectsRef = useRef();
+
+  const isAboveExtraSmallScreens = useMediaQuery('(min-width: 480px)');
 
   const { inViewport, enterCount, leaveCount } = useInViewport(projectsRef, {
     threshold: 0.1,
@@ -39,7 +42,7 @@ const Projects = ({ setSelectedPage }) => {
   };
 
   return (
-    <section id="projects" className="py-28 " ref={projectsRef}>
+    <section id="projects" className={`py-28 ${isAboveExtraSmallScreens ? '' : 'overflow-x-hidden'}`} ref={projectsRef}>
       {/* HEADINGS */}
       <motion.div
         className="text-center md:text-left"
