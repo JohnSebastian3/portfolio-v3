@@ -12,7 +12,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 const Projects = ({ setSelectedPage }) => {
   const projectsRef = useRef();
 
-  const isAboveExtraSmallScreens = useMediaQuery('(min-width: 480px)');
+  const isAboveExtraSmallScreens = useMediaQuery("(min-width: 480px)");
 
   const { inViewport, enterCount, leaveCount } = useInViewport(projectsRef, {
     threshold: 0.1,
@@ -42,7 +42,11 @@ const Projects = ({ setSelectedPage }) => {
   };
 
   return (
-    <section id="projects" className={`py-28 ${isAboveExtraSmallScreens ? '' : 'overflow-x-hidden'}`} ref={projectsRef}>
+    <section
+      id="projects"
+      className={`py-28 ${isAboveExtraSmallScreens ? "" : "overflow-x-hidden"}`}
+      ref={projectsRef}
+    >
       {/* HEADINGS */}
       <motion.div
         className="text-center md:text-left"
@@ -83,12 +87,18 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl">
-            <img
-              src={project1}
-              alt={"BetterBudget"}
-              className="md:h-[325px] w-full "
-            />
+          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+            <a
+              href="https://betterbudget.up.railway.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={project1}
+                alt={"BetterBudget"}
+                className="md:h-[325px] w-full "
+              />
+            </a>
           </div>
           <div className="lg:absolute  lg:text-right lg:right-0  text-left flex flex-col gap-3 lg:items-end">
             <h2 className="text-2xl md:text-3xl">BetterBudget</h2>
@@ -134,12 +144,18 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl">
-            <img
-              src={project2}
-              alt={"BetterBudget"}
-              className="md:h-[325px]  w-full"
-            />
+          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+            <a
+              href="https://divbyte.up.railway.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={project2}
+                alt={"BetterBudget"}
+                className="md:h-[325px]  w-full"
+              />
+            </a>
           </div>
           <div className="lg:absolute left-0 text-left flex flex-col gap-3 lg:items-start">
             <h2 className="text-2xl md:text-3xl">DivByte</h2>
@@ -186,12 +202,18 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl">
-            <img
-              src={project3}
-              alt={"BetterBudget"}
-              className="md:h-[325px]  w-full"
-            />
+          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+            <a
+              href="https://www.bellasalonoceanside.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={project3}
+                alt={"BetterBudget"}
+                className="md:h-[325px]  w-full"
+              />
+            </a>
           </div>
           <div className="lg:absolute lg:right-0 lg:text-right text-left flex flex-col gap-3 lg:items-end">
             <h2 className="text-2xl md:text-3xl">Bella Hair Salon</h2>
@@ -234,12 +256,18 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl ">
-            <img
-              src={project4}
-              alt={"BetterBudget"}
-              className="md:h-[325px]  w-full"
-            />
+          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+            <a
+              href="https://cleave.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={project4}
+                alt={"BetterBudget"}
+                className="md:h-[325px]  w-full"
+              />
+            </a>
           </div>
           <div className="lg:absolute left-0 text-left flex flex-col gap-3 lg:items-start">
             <h2 className="text-2xl md:text-3xl">Cleave</h2>
