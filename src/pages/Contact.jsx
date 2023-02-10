@@ -70,6 +70,31 @@ const Contact = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
+          <div className="mb-8 flex flex-col gap-2 items-center text-center">
+            <p>Looking to get in touch? Let's chat. Coffee's on me.</p>
+            <p>
+              Reach out to me on{" "}
+              <a
+                href="https://twitter.com/SebaCodes"
+                className="text-aqua hover:text-light-aqua transiton duration-200"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Twitter
+              </a>
+              ,{" "}
+              <a
+                href="https://www.linkedin.com/in/johnsguerrero/"
+                className="text-aqua hover:text-light-aqua transiton duration-200"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              , or shoot me an email at <strong>johnsebastiandev@gmail.com</strong>
+            </p>
+            <p>Or, you could send me a message below!</p>
+          </div>
           <form
             target="_blank"
             onSubmit={onSubmit}
