@@ -45,11 +45,7 @@ const Projects = ({ setSelectedPage }) => {
   };
 
   return (
-    <section
-      id="projects"
-      className={`py-28 ${isAboveExtraSmallScreens ? "" : "overflow-x-hidden"}`}
-      ref={projectsRef}
-    >
+    <section id="projects" className={`py-28 `} ref={projectsRef}>
       {/* HEADINGS */}
       <motion.div
         className="text-center md:text-left"
