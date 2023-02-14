@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import { useInViewport } from "react-in-viewport";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../components/SocialMediaIcons";
@@ -7,12 +8,16 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const Landing = ({ setSelectedPage }) => {
+  const { theme } = useContext(ThemeContext);
+
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
   const landingRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(landingRef);
- 
+  const { inViewport } = useInViewport(landingRef, {
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     if (inViewport) {
       setSelectedPage("home");
@@ -22,7 +27,7 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <section
       id="home"
-      className="flex items-center h-full gap-16 py-14 mt-32 sm:mt-0 relative "
+      className="flex items-center h-full gap-16 py-14 sm:mt-0 relative "
       ref={landingRef}
     >
       {/* MAIN SECTION */}
@@ -38,7 +43,13 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <span className="text-aqua text-md md:text-lg ">Hi! My name is</span>
+          <span
+            className={`${
+              theme === "dark" ? "text-aqua" : "text-charcoal"
+            } text-md md:text-lg `}
+          >
+            Hi! My name is
+          </span>
           <p
             className="w-full sm:max-w-[550px] md:max-w-none text-3xl xs:text-4xl 
                       sm:text-5xl md:text-7xl font-dosis z-10 mt-2 mb-2 md:mt-6 md:mb-6 font-bold"
@@ -47,8 +58,10 @@ const Landing = ({ setSelectedPage }) => {
             Guerrero,
           </p>
           <p
-            className="w-full sm:max-w-[550px] md:max-w-none text-iron 
-                      text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold"
+            className={`w-full sm:max-w-[550px] md:max-w-none ${
+              theme === "dark" ? "text-iron" : "text-aqua"
+            }
+                      text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold`}
           >
             A Software Engineer.
           </p>
@@ -75,8 +88,12 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-gradient-aqua text-charcoal rounded-sm py-2 px-4 xs:px-7 font-semibold
-              hover:text-white transition duration-200"
+            className={`bg-gradient-aqua ${
+              theme === "dark"
+                ? "text-charcoal hover:text-white"
+                : "text-slate hover:text-charcoal"
+            } rounded-sm py-2 px-4 xs:px-7 font-semibold
+               transition duration-200`}
             onClick={() => setSelectedPage("contact")}
             href="#projects"
           >
@@ -88,8 +105,12 @@ const Landing = ({ setSelectedPage }) => {
             href="#contact"
           >
             <div
-              className="bg-charcoal hover:text-aqua transition duration-200 w-full 
-            h-full flex items-center justify-center px-4 xs:px-7 "
+              className={`${
+                theme === "dark"
+                  ? "bg-charcoal text-steel"
+                  : "bg-slate text-charcoal"
+              }bg-charcoal hover:text-aqua transition duration-200 w-full 
+            h-full flex items-center justify-center px-4 xs:px-7 `}
             >
               Contact
             </div>
@@ -107,7 +128,7 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <SocialMediaIcons />
+          <SocialMediaIcons page="landing" />
         </motion.div>
       </div>
 

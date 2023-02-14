@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import { useInViewport } from "react-in-viewport";
 
 const Contact = ({ setSelectedPage }) => {
+  const { theme } = useContext(ThemeContext);
+
   const contactRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(contactRef, {
-    threshold: 0.3,
+  const { inViewport } = useInViewport(contactRef, {
+    threshold: 0.5,
   });
 
   useEffect(() => {
@@ -90,18 +93,21 @@ const Contact = ({ setSelectedPage }) => {
               >
                 LinkedIn
               </a>
-              , or shoot me an email at <strong>johnsebastiandev@gmail.com</strong>
+              , or shoot me an email at{" "}
+              <strong>johnsebastiandev@gmail.com</strong>
             </p>
             <p>Or, you could send me a message below!</p>
           </div>
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/9ca689fdc1086f9a4f26d38ff3693551"
+            action="https://formsubmit.co/9ca689fdc1086f9a4f26d38ff3693551    "
             method="POST"
           >
             <input
-              className="w-full bg-iron font-semibold text-charcoal placeholder:text-opaque-black p-3"
+              className={`w-full ${
+                theme === "dark" ? "bg-iron" : "bg-steel"
+              } font-semibold text-charcoal placeholder:text-opaque-black p-3`}
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -118,7 +124,9 @@ const Contact = ({ setSelectedPage }) => {
             )}
 
             <input
-              className="w-full bg-iron font-semibold text-charcoal placeholder:text-opaque-black p-3 mt-5"
+              className={`w-full ${
+                theme === "dark" ? "bg-iron" : "bg-steel"
+              } font-semibold text-charcoal placeholder:text-opaque-black p-3 mt-5`}
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -134,8 +142,9 @@ const Contact = ({ setSelectedPage }) => {
             )}
 
             <textarea
-              className="w-full bg-iron font-semibold text-charcoal placeholder:text-opaque-black p-3 mt-5
-                        "
+              className={`w-full ${
+                theme === "dark" ? "bg-iron" : "bg-steel"
+              } font-semibold text-charcoal placeholder:text-opaque-black p-3 mt-5`}
               type="text"
               placeholder="MESSAGE"
               {...register("message", {
@@ -156,7 +165,7 @@ const Contact = ({ setSelectedPage }) => {
 
             <button
               type="submit"
-              className="p-5 bg-dark-aqua font-semibold text-charcoal mt-5 hover:bg-light-aqua
+              className="p-5 bg-aqua font-semibold text-charcoal mt-5 hover:bg-light-aqua
               hover:text-charcoal transition duration-200 rounded-sm"
             >
               Send Message

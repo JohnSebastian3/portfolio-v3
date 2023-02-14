@@ -1,5 +1,5 @@
-import LineGradient from "../components/LineGradient";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import { useInViewport } from "react-in-viewport";
 import { motion } from "framer-motion";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -20,20 +20,20 @@ import { AiFillGithub } from "react-icons/ai";
 import { DiNpm } from "react-icons/di";
 import { SiPostman } from "react-icons/si";
 
-const MySkills = ({setSelectedPage}) => {
+const MySkills = ({ setSelectedPage }) => {
+  const { theme } = useContext(ThemeContext);
 
   const skillsRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(
-    skillsRef,
-    {threshold: 0.1}
-  );
+  const { inViewport } = useInViewport(skillsRef, {
+    threshold: 0.5,
+  });
 
   useEffect(() => {
-    if(inViewport) {
-      setSelectedPage('skills');
+    if (inViewport) {
+      setSelectedPage("skills");
     }
-  }, [inViewport])
+  }, [inViewport]);
 
   return (
     <section id="skills" className="py-28 " ref={skillsRef}>
@@ -48,11 +48,13 @@ const MySkills = ({setSelectedPage}) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
+        <p
+          className="flex flex-col xs:flex-row pb-2 gap-2 w-full font-semibold justify-center text-3xl 
                       border-b border-aqua border-opacity-40 md:text-4xl mb-5 
                       after:hidden xs:border-none xs:after:block after:h-[1px] after:flex-1 after:bg-aqua 
-                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px] ">
-          SKILLS & <span className="text-aqua">EXPERIENCE</span> 
+                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px] "
+        >
+          SKILLS & <span className="text-aqua">EXPERIENCE</span>
         </p>
       </motion.div>
 
@@ -67,10 +69,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[65px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <AiFillHtml5 className="w-2/3 h-2/3 text-steel" />
+              <AiFillHtml5
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">HTML 5</p>
           </motion.div>
@@ -80,10 +88,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <DiCss3 className="w-2/3 h-2/3 text-steel" />
+              <DiCss3
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">CSS 3</p>
           </motion.div>
@@ -93,10 +107,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <IoLogoJavascript className="w-2/3 h-2/3 text-steel" />
+              <IoLogoJavascript
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">JavaScript</p>
           </motion.div>
@@ -106,10 +126,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <SiTypescript className="w-2/3 h-2/3 text-steel" />
+              <SiTypescript
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">TypeScript</p>
           </motion.div>
@@ -119,10 +145,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <FaReact className="w-2/3 h-2/3 text-steel" />
+              <FaReact
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">React</p>
           </motion.div>
@@ -132,10 +164,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <SiRedux className="w-2/3 h-2/3 text-steel" />
+              <SiRedux
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Redux</p>
           </motion.div>
@@ -145,10 +183,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <IoLogoNodejs className="w-2/3 h-2/3 text-steel" />
+              <IoLogoNodejs
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Node.js</p>
           </motion.div>
@@ -158,10 +202,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <SiExpress className="w-2/3 h-2/3 text-steel" />
+              <SiExpress
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Express.js</p>
           </motion.div>
@@ -171,10 +221,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <SiMongodb className="w-2/3 h-2/3 text-steel" />
+              <SiMongodb
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">MongoDB</p>
           </motion.div>
@@ -184,10 +240,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <DiPostgresql className="w-2/3 h-2/3 text-steel" />
+              <DiPostgresql
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">PostgreSQL</p>
           </motion.div>
@@ -197,10 +259,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <DiPython className="w-2/3 h-2/3 text-steel" />
+              <DiPython
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Python</p>
           </motion.div>
@@ -210,10 +278,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <DiJava className="w-2/3 h-2/3 text-steel" />
+              <DiJava
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Java</p>
           </motion.div>
@@ -223,10 +297,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <SiPassport className="w-2/3 h-2/3 text-steel" />
+              <SiPassport
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Passport.js</p>
           </motion.div>
@@ -236,10 +316,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <DiGit className="w-2/3 h-2/3 text-steel" />
+              <DiGit
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Git</p>
           </motion.div>
@@ -249,10 +335,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <AiFillGithub className="w-2/3 h-2/3 text-steel" />
+              <AiFillGithub
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Github</p>
           </motion.div>
@@ -262,10 +354,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <DiNpm className="w-2/3 h-2/3 text-steel" />
+              <DiNpm
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">NPM</p>
           </motion.div>
@@ -275,10 +373,16 @@ const MySkills = ({setSelectedPage}) => {
             className="flex justify-center items-center flex-col text-center m-2 md:m-4 transition duration-200 w-[60px] md:w-[80px]"
           >
             <div
-              className="bg-carbon w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
-              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1"
+              className={`${
+                theme === "dark" ? "bg-carbon" : "bg-steel"
+              } w-[70px] h-[70px] md:w-[90px] md:h-[90px] rounded-full flex justify-center 
+              items-center hover:shadow-md hover:shadow-aqua transition duration-200 hover:-translate-y-1`}
             >
-              <SiPostman className="w-2/3 h-2/3 text-steel" />
+              <SiPostman
+                className={`w-2/3 h-2/3 ${
+                  theme === "dark" ? "text-steel" : "text-carbon"
+                }`}
+              />
             </div>
             <p className="text-xs md:text-lg font-bold mt-2">Postman</p>
           </motion.div>

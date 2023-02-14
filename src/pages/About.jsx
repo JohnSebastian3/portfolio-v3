@@ -4,19 +4,16 @@ import profile from "../assets/profile-image.jpg";
 import { useEffect, useRef } from "react";
 import { useInViewport } from "react-in-viewport";
 
-const About = ({setSelectedPage}) => {
-
+const About = ({ setSelectedPage }) => {
   const aboutRef = useRef();
 
-  const { inViewport, enterCount, leaveCount } = useInViewport(
-    aboutRef,
-  );
+  const { inViewport } = useInViewport(aboutRef, { threshold: 0.5 });
 
   useEffect(() => {
-    if(inViewport) {
-      setSelectedPage('about');
+    if (inViewport) {
+      setSelectedPage("about");
     }
-  }, [inViewport])
+  }, [inViewport]);
 
   return (
     <section id="about" className="py-28" ref={aboutRef}>
@@ -32,10 +29,12 @@ const About = ({setSelectedPage}) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <p className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
+        <p
+          className="flex pb-2 gap-2 w-full font-semibold justify-center text-3xl 
                       border-b border-aqua border-opacity-40 md:text-4xl mb-5 
                       after:hidden xs:border-none xs:after:block after:h-[1px] after:flex-1 after:bg-aqua 
-                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px] ">
+                      after:bg-opacity-40 after:relative after:top-5 after:ml-[20px] "
+        >
           <span className="text-aqua">ABOUT</span> <span>ME</span>
         </p>
       </motion.div>
@@ -54,16 +53,17 @@ const About = ({setSelectedPage}) => {
           }}
         >
           <p className="">
-            Hello! My name is John and I turn ideas into real life products. My passion for Web Development started back in 2020
-            when I discovered how to inspect websites on Google Chrome. It turns
-            out that showing my friends how to break websites using the DevTools
-            was a good way to learn HTML and CSS!
+            Hello! My name is John and I turn ideas into real life products. My
+            passion for Web Development started back in 2020 when I discovered
+            how to inspect websites on Google Chrome. It turns out that showing
+            my friends how to break websites using the DevTools was a good way
+            to learn HTML and CSS!
           </p>
           <p className="mt-4">
             Today, I've had the liberty of working at an agency and as a
             Freelance Web Developer. I've cultivated a deep passion for
             developing efficient solutions and products, and am always looking
-            to improve my capabilities, one line of code at a time.
+            to improve my capabilities one line of code at a time.
           </p>
         </motion.div>
 
