@@ -45,7 +45,11 @@ const Projects = ({ setSelectedPage }) => {
   };
 
   return (
-    <section id="projects" className={`py-28 `} ref={projectsRef}>
+    <section
+      id="projects"
+      className={`py-28 ${isAboveExtraSmallScreens ? "" : "overflow-x-hidden"}`}
+      ref={projectsRef}
+    >
       {/* HEADINGS */}
       <motion.div
         className="text-center md:text-left"
@@ -66,18 +70,10 @@ const Projects = ({ setSelectedPage }) => {
         >
           <span className="text-aqua">PRO</span>JECTS
         </p>
-        {/* <LineGradient width="mx-auto w-3/5" /> */}
       </motion.div>
 
       {/* PROJECTS */}
       <div className="flex flex-col gap-24 mt-24">
-        {/* <motion.div
-          className="flex flex-col "
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={container}
-        > */}
         <motion.div
           variants={projectVariant1}
           className="relative flex  flex-col lg:flex-row items-center gap-8"
@@ -86,7 +82,7 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+          <div className="h-auto w-fit xs:shadow-xl md:hover:scale-105 transition duration-200">
             <a
               href="https://betterbudget.up.railway.app/"
               target="_blank"
@@ -102,7 +98,7 @@ const Projects = ({ setSelectedPage }) => {
           <div className="lg:absolute  lg:text-right lg:right-0  text-left flex flex-col gap-3 lg:items-end">
             <h2 className="text-2xl md:text-3xl">BetterBudget</h2>
             <p
-              className={`lg:max-w-[450px] shadow-lg ${
+              className={`lg:max-w-[450px] xs:shadow-md ${
                 theme === "dark" ? "bg-carbon" : "bg-steel"
               } bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2`}
             >
@@ -151,7 +147,7 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+          <div className="h-auto w-fit xs:shadow-xl md:hover:scale-105 transition duration-200">
             <a
               href="https://divbyte.up.railway.app/"
               target="_blank"
@@ -167,7 +163,7 @@ const Projects = ({ setSelectedPage }) => {
           <div className="lg:absolute left-0 text-left flex flex-col gap-3 lg:items-start">
             <h2 className="text-2xl md:text-3xl">DivByte</h2>
             <p
-              className={`lg:max-w-[450px] shadow-lg ${
+              className={`lg:max-w-[450px] xs:shadow-md ${
                 theme === "dark" ? "bg-carbon" : "bg-steel"
               } bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2`}
             >
@@ -217,7 +213,7 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+          <div className="h-auto w-fit xs:shadow-xl md:hover:scale-105 transition duration-200">
             <a
               href="https://www.bellasalonoceanside.com/"
               target="_blank"
@@ -233,7 +229,7 @@ const Projects = ({ setSelectedPage }) => {
           <div className="lg:absolute lg:right-0 lg:text-right text-left flex flex-col gap-3 lg:items-end">
             <h2 className="text-2xl md:text-3xl">Bella Hair Salon</h2>
             <p
-              className={`lg:max-w-[450px] shadow-lg ${
+              className={`lg:max-w-[450px] xs:shadow-md ${
                 theme === "dark" ? "bg-carbon" : "bg-steel"
               } bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2`}
             >
@@ -279,7 +275,7 @@ const Projects = ({ setSelectedPage }) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-auto w-fit shadow-2xl md:hover:scale-105 transition duration-200">
+          <div className="h-auto w-fit xs:shadow-xl md:hover:scale-105 transition duration-200">
             <a
               href="https://cleave.netlify.app/"
               target="_blank"
@@ -295,7 +291,7 @@ const Projects = ({ setSelectedPage }) => {
           <div className="lg:absolute left-0 text-left flex flex-col gap-3 lg:items-start">
             <h2 className="text-2xl md:text-3xl">Cleave</h2>
             <p
-              className={`lg:max-w-[450px] shadow-lg ${
+              className={`lg:max-w-[450px] xs:shadow-md ${
                 theme === "dark" ? "bg-carbon" : "bg-steel"
               } bg-opacity-50 backdrop-blur relative py-4 px-2 rounded-md z-2`}
             >
@@ -352,7 +348,7 @@ const Projects = ({ setSelectedPage }) => {
             }}
             className={`${
               theme === "dark" ? "bg-carbon" : "bg-steel"
-            } py-6 px-4 rounded-md relative shadow-lg h-[300px] bg-opacity-60`}
+            } py-6 px-4 rounded-md relative xs:shadow-lg h-[300px] bg-opacity-60`}
           >
             <h2 className="text-aqua text-2xl md:text-3xl">Libberly</h2>
             <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4 relative py-4 rounded-md z-2">
@@ -399,7 +395,7 @@ const Projects = ({ setSelectedPage }) => {
             }}
             className={`${
               theme === "dark" ? "bg-carbon" : "bg-steel"
-            } py-6 px-4 rounded-md relative shadow-lg h-[300px] bg-opacity-60`}
+            } py-6 px-4 rounded-md relative xs:shadow-lg h-[300px] bg-opacity-60`}
           >
             <h2 className="text-aqua text-2xl md:text-3xl">Luxury Salon</h2>
             <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4 relative py-4 rounded-md z-2">
@@ -445,7 +441,7 @@ const Projects = ({ setSelectedPage }) => {
             }}
             className={`${
               theme === "dark" ? "bg-carbon" : "bg-steel"
-            } py-6 px-4 rounded-md relative shadow-lg h-[300px] bg-opacity-60`}
+            } py-6 px-4 rounded-md relative xs:shadow-lg h-[300px] bg-opacity-60`}
           >
             <h2 className="text-aqua text-2xl md:text-3xl">Jitsuno MMA</h2>
             <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4 relative py-4 rounded-md z-2">
@@ -490,7 +486,7 @@ const Projects = ({ setSelectedPage }) => {
             }}
             className={`${
               theme === "dark" ? "bg-carbon" : "bg-steel"
-            } py-6 px-4 rounded-md relative shadow-lg h-[300px] bg-opacity-60`}
+            } py-6 px-4 rounded-md relative xs:shadow-lg h-[300px] bg-opacity-60`}
           >
             <h2 className="text-aqua text-2xl md:text-3xl">Admin Dashboard</h2>
             <p className="lg:max-w-[450px] mt-2 mb-4 xs:mb-2 md:mb-4relative py-4 rounded-md z-2">
