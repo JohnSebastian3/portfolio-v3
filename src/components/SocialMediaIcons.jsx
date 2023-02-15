@@ -32,7 +32,7 @@ const SocialMediaIcons = ({ page }) => {
               ? "text-steel hover:text-aqua"
               : "text-carbon hover:text-iron"
             : "text-steel hover:text-light-aqua"
-        } hover:text-light-aqua transition duration-200`}
+        } transition duration-200`}
         href="https://twitter.com/SebaCodes"
         target="_blank"
         rel="noreferrer"
@@ -46,7 +46,7 @@ const SocialMediaIcons = ({ page }) => {
               ? "text-steel hover:text-aqua"
               : "text-carbon hover:text-iron"
             : "text-steel hover:text-light-aqua"
-        } hover:text-light-aqua transition duration-200`}
+        } transition duration-200`}
         href="https://github.com/JohnSebastian3"
         target="_blank"
         rel="noreferrer"
