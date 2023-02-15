@@ -4,7 +4,7 @@ import { ThemeContext } from "../context/ThemeContext";
 import { useInViewport } from "react-in-viewport";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-import { BsArrowDownCircleFill } from "react-icons/bs";
+import { GoChevronDown } from "react-icons/go";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const Landing = ({ setSelectedPage }) => {
@@ -148,7 +148,7 @@ const Landing = ({ setSelectedPage }) => {
             onClick={() => setSelectedPage("projects")}
             href="#projects"
           >
-            <BsArrowDownCircleFill
+            <GoChevronDown
               className="text-aqua text-4xl hover:cursor-pointer
                        hover:-translate-y-1 transition duration-200 hover:text-light-aqua"
             />
