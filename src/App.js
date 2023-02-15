@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     isTopOfPage ? setSelectedPage("home") : setSelectedPage("");
-  }, []);
+  }, [isTopOfPage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +38,7 @@ function App() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isAboveMediumScreens]);
 
   const toggleTheme = () => {
     setTheme((currTheme) => (currTheme === "dark" ? "light" : "dark"));
