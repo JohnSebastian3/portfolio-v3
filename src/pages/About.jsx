@@ -1,4 +1,3 @@
-import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import profile from "../assets/profile-image.jpg";
 import { useEffect, useRef } from "react";
