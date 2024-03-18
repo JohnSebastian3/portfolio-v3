@@ -59,8 +59,9 @@ const About = ({ setSelectedPage }) => {
             to learn HTML and CSS!
           </p>
           <p className="mt-4">
-            Today, I've had the liberty of working at an agency and as a
-            Freelance Web Developer. I've cultivated a deep passion for
+            Today, I've had the liberty of working for the Anti Money Laundering
+            team at MUFG via York Solutions as a Full-Stack Software Engineer
+            and as a Freelance Web Developer. I've cultivated a deep passion for
             developing efficient solutions and products, and am always looking
             to improve my capabilities one line of code at a time.
           </p>

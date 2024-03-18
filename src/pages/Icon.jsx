@@ -7,6 +7,7 @@ import {
   DiJava,
   DiGit,
   DiNpm,
+  DiOpenshift,
 } from "react-icons/di";
 import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io";
 import {
@@ -16,8 +17,9 @@ import {
   SiMongodb,
   SiPassport,
   SiPostman,
+  SiSpring,
 } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaAngular, FaDocker } from "react-icons/fa";
 
 const Icon = ({ icon, theme }) => {
   const iconStyles = `w-2/3 h-2/3 ${
@@ -41,6 +43,8 @@ const Icon = ({ icon, theme }) => {
         <DiGit className={iconStyles} />
       ) : icon === "DiNpm" ? (
         <DiNpm className={iconStyles} />
+      ) : icon === "DiOpenshift" ? (
+        <DiOpenshift className={iconStyles} />
       ) : icon === "IoLogoJavascript" ? (
         <IoLogoJavascript className={iconStyles} />
       ) : icon === "IoLogoNodejs" ? (
@@ -57,8 +61,14 @@ const Icon = ({ icon, theme }) => {
         <SiPassport className={iconStyles} />
       ) : icon === "SiPostman" ? (
         <SiPostman className={iconStyles} />
+      ) : icon === "SiSpring" ? (
+        <SiSpring className={iconStyles} />
       ) : icon === "FaReact" ? (
         <FaReact className={iconStyles} />
+      ) : icon === "FaAngular" ? (
+        <FaAngular className={iconStyles} />
+      ) : icon === "FaDocker" ? (
+        <FaDocker className={iconStyles} />
       ) : (
         ""
       )}

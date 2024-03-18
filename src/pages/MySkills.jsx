@@ -53,20 +53,41 @@ const MySkills = ({ setSelectedPage }) => {
           <Skill theme={theme} title="TypeScript" icon="SiTypescript" />
           <Skill theme={theme} title="React" icon="FaReact" />
           <Skill theme={theme} title="Redux" icon="SiRedux" />
+          <Skill theme={theme} title="Angular" icon="FaAngular" />
           <Skill theme={theme} title="Node.js" icon="IoLogoNodejs" />
           <Skill theme={theme} title="Express.js" icon="SiExpress" />
           <Skill theme={theme} title="MongoDB" icon="SiMongodb" />
           <Skill theme={theme} title="PostgreSQL" icon="DiPostgresql" />
           <Skill theme={theme} title="Python" icon="DiPython" />
           <Skill theme={theme} title="Java" icon="DiJava" />
+          <Skill theme={theme} title="Spring Boot" icon="SiSpring" />
           <Skill theme={theme} title="Passport.js" icon="SiPassport" />
           <Skill theme={theme} title="Git" icon="DiGit" />
           <Skill theme={theme} title="Github" icon="AiFillGithub" />
           <Skill theme={theme} title="NPM" icon="DiNpm" />
           <Skill theme={theme} title="Postman" icon="SiPostman" />
+          <Skill theme={theme} title="OpenShift" icon="DiOpenshift" />
+          <Skill theme={theme} title="Docker" icon="FaDocker" />
         </motion.div>
 
         <div className="mt-8 md:mt-0 flex flex-col flex-1 justify-start items-start">
+          <motion.div className="w-full flex flex-row justify-start items-start mt-4 mb-4">
+            <div className="mr-4 xs:mr-12">
+              <p className="font-bold text-aqua md:text-xl">2023</p>
+            </div>
+            <motion.div className="flex-1">
+              <>
+                <motion.div
+                  whileInView={{ opacity: [0, 1] }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col justify-start items-start mb-4"
+                >
+                  <h4 className="font-bold">Full-Stack Software Engineer</h4>
+                  <p className="mt-1">MUFG via York Solutions LLC</p>
+                </motion.div>
+              </>
+            </motion.div>
+          </motion.div>
           <motion.div className="w-full flex flex-row justify-start items-start mt-4 mb-4">
             <div className="mr-4 xs:mr-12">
               <p className="font-bold text-aqua md:text-xl">2022</p>
