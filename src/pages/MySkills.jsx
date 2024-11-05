@@ -73,7 +73,7 @@ const MySkills = ({ setSelectedPage }) => {
         <div className="mt-8 md:mt-0 flex flex-col flex-1 justify-start items-start">
           <motion.div className="w-full flex flex-row justify-start items-start mt-4 mb-4">
             <div className="mr-4 xs:mr-12">
-              <p className="font-bold text-aqua md:text-xl">2023</p>
+              <p className="font-bold text-aqua md:text-xl">2024</p>
             </div>
             <motion.div className="flex-1">
               <>
@@ -83,7 +83,24 @@ const MySkills = ({ setSelectedPage }) => {
                   className="flex flex-col justify-start items-start mb-4"
                 >
                   <h4 className="font-bold">Full-Stack Software Engineer</h4>
-                  <p className="mt-1">MUFG via York Solutions LLC</p>
+                  <p className="mt-1">MUFG Bank</p>
+                </motion.div>
+              </>
+            </motion.div>
+          </motion.div>
+          <motion.div className="w-full flex flex-row justify-start items-start mt-4 mb-4">
+            <div className="mr-4 xs:mr-12">
+              <p className="font-bold text-aqua md:text-xl">2023</p>
+            </div>
+            <motion.div className="flex-1">
+              <>
+                <motion.div
+                  whileInView={{ opacity: [0, 1] }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col justify-start items-start mb-4"
+                >
+                  <h4 className="font-bold">Software Engineer Consultant</h4>
+                  <p className="mt-1">MUFG Bank via York Solutions LLC</p>
                 </motion.div>
               </>
             </motion.div>
@@ -99,7 +116,7 @@ const MySkills = ({ setSelectedPage }) => {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col justify-start items-start mb-4"
                 >
-                  <h4 className="font-bold">Software Engineer</h4>
+                  <h4 className="font-bold">Freelance Software Engineer</h4>
                   <p className="mt-1">100Devs</p>
                 </motion.div>
               </>
